@@ -4,6 +4,7 @@ from sys import exit
 import random
 import time
 import copy
+import os
 from mazesolver import bfs_mazesolver,back_maze,farest
 def reverse(a):
     b=copy.deepcopy(a)
@@ -49,16 +50,17 @@ pygame.init()
 chushi=1#蛇身初始长度
 long2=300#屏幕长
 wid=300#屏幕宽
+base_dir = "snake"
 screen = pygame.display.set_mode((long2,wid))#显示屏幕
-picturefood="snake\\food2.jpg"
-picturebrain="snake\\brain2.jpg"
-picturtail="snake\\tail.png"
-picturheng="snake\\heng.png"
-picturshu="snake\\shu.png"
-pictur15="snake\\1.5.png"
-pictur45="snake\\4.5.png"
-pictur75="snake\\7.5.png"
-pictur105="snake\\10.5.png"
+picturefood = os.path.join(base_dir, "food2.jpg")
+picturebrain = os.path.join(base_dir, "brain2.jpg")
+picturtail = os.path.join(base_dir, "tail.png")
+picturheng = os.path.join(base_dir, "heng.png")
+picturshu = os.path.join(base_dir, "shu.png")
+pictur15 = os.path.join(base_dir, "1.5.png")
+pictur45 = os.path.join(base_dir, "4.5.png")
+pictur75 = os.path.join(base_dir, "7.5.png")
+pictur105 = os.path.join(base_dir, "10.5.png")
 snakebrain=pygame.image.load(picturebrain).convert()
 food=pygame.image.load(picturefood).convert_alpha()
 tail=pygame.image.load(picturtail).convert()
